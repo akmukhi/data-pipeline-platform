@@ -1,0 +1,29 @@
+# Core dependencies
+pandas>=2.0.0
+sqlalchemy>=2.0.0
+pydantic>=2.0.0
+
+# Database drivers
+psycopg2-binary>=2.9.0  # PostgreSQL
+pymysql>=1.1.0  # MySQL
+sqlalchemy-utils>=0.41.0
+
+# Task queue and workers
+celery>=5.3.0
+redis>=5.0.0
+
+# Configuration and utilities
+pyyaml>=6.0
+python-dotenv>=1.0.0
+
+# API framework (optional)
+fastapi>=0.100.0
+uvicorn>=0.23.0
+
+# Logging and monitoring
+structlog>=23.1.0
+
+# Testing (optional, install with dev extras)
+# pytest>=7.4.0
+# pytest-cov>=4.1.0
+
