@@ -1,0 +1,23 @@
+{
+  "ingestion": {
+    "query": "SELECT id, name, email, age, created_at FROM users WHERE created_at > :start_date",
+    "source_db_url": "postgresql://user:password@localhost:5432/source_db",
+    "parameters": {
+      "start_date": "2024-01-01"
+    },
+    "batch_size": 10000
+  },
+  "transformation": {
+    "type": "sql",
+    "config": {
+      "sql_query": "SELECT id, UPPER(name) as name_upper, email, EXTRACT(YEAR FROM created_at) as created_year FROM input_data"
+    }
+  },
+  "persistence": {
+    "table_name": "users_staging",
+    "schema": "public",
+    "strategy": "upsert",
+    "upsert_keys": ["id"]
+  }
+}
+
