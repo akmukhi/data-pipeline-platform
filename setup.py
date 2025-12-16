@@ -43,5 +43,6 @@ setup(
             "pipeline-cli=cli.main:main",
         ],
     },
+    include_package_data=True,
 )
 
