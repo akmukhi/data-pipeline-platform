@@ -43,9 +43,9 @@ graph TB
         CLI[CLI<br/>Command Line]
     end
     
-    subgraph Queue[Task Queue Layer]
+    subgraph QueueLayer[Task Queue Layer]
         Redis[(Redis<br/>Broker & Results)]
-        Queue[Task Queue<br/>Celery]
+        CeleryQueue[Task Queue<br/>Celery]
     end
     
     subgraph Workers[Worker Pool]
@@ -72,9 +72,9 @@ graph TB
         Logging[Structured Logging]
     end
     
-    API --> Queue
-    CLI --> Queue
-    Queue --> Workers
+    API --> CeleryQueue
+    CLI --> CeleryQueue
+    CeleryQueue --> Workers
     Workers --> Pipeline
     Pipeline --> Ingest
     Pipeline --> Transform
@@ -83,7 +83,7 @@ graph TB
     Transform --> Utils
     Persist --> DestDB
     Persist --> SchemaReg
-    Redis -.->|Broker| Queue
+    Redis -.->|Broker| CeleryQueue
     Redis -.->|Idempotency| Idempotency
     Utils --> Retry
     Utils --> Idempotency
