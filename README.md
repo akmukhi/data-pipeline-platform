@@ -791,6 +791,4 @@ For issues and questions:
 - Check existing documentation
 - Review example code in `examples/`
 
----
 
-**Built with ❤️ for reliable data processing**
