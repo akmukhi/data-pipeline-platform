@@ -245,7 +245,7 @@ python -m pipeline.workers.run_worker
 
 ```bash
 # Clone repository
-git clone <repository-url>
+git clone https://github.com/akmukhi/data-pipeline-platform
 cd data-pipeline-platform
 
 # Install package
