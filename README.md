@@ -203,7 +203,7 @@ graph LR
 
 ```bash
 # Clone the repository
-git clone <repository-url>
+git clone https://github.com/akmukhi/data-pipeline-platform
 cd data-pipeline-platform
 
 # Start all services
